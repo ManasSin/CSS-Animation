@@ -1,0 +1,53 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+body {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  padding: 8em 0;
+}
+
+.shadow-text {
+  position: absolute;
+  font: normal 400 10vw "Permanent Marker", Helvetica;
+  left: 35%;
+  top: 30%;
+}
+
+.shadow-text::after {
+  content: attr(text);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  color: transparent;
+  -webkit-text-stroke: 0.1vw black;
+}
+
+img {
+  width: 50vw;
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  aspect-ratio: 0;
+  /* transform: rotate(-90deg); */
+  animation: puchAnimation 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite
+    alternate;
+}
+
+@keyframes puchAnimation {
+  0%,
+  5% {
+    transform: translate(100vw, 0) rotate(15deg);
+  }
+
+  90%,
+  100% {
+    transform: translate(-5vw, -5vw) rotate(-30deg);
+  }
+}

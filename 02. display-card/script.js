@@ -1,19 +1,19 @@
 const imageCards = [
   {
-    imgesrc: "./images/cloudy-weather.jpg",
-    alt: "cloudy weather",
-  },
-  {
-    imgesrc: "./images/cool-boy.jpg",
-    alt: "cool boy",
-  },
-  {
     imgesrc: "./images/dreamy-desk.jpg",
     alt: "Dreamy desk",
   },
   {
     imgesrc: "./images/imaginary-women.jpg",
     alt: "Imaginary women",
+  },
+  {
+    imgesrc: "./images/cloudy-weather.jpg",
+    alt: "cloudy weather",
+  },
+  {
+    imgesrc: "./images/cool-boy.jpg",
+    alt: "cool boy",
   },
   {
     imgesrc: "./images/lonly-guy.jpg",
@@ -46,18 +46,10 @@ imageCards.forEach((element) => {
 const cards = document.querySelectorAll(".small-images");
 console.log(cards);
 
-// let imageHolder = document.querySelector(".inner-cards").childNodes[1];
-
-// cards.addEventListener("click", function () {
-//   mainImage.attributes.src.nodeValue = `${imageHolder.attributes.src.nodeValue}`;
-
-//   document.querySelector(".inner-cards").classList.toggle("hidden");
-// });
-
 cards.forEach((element) => {
   element.addEventListener("click", function () {
     mainImage.attributes.src.nodeValue = `${element.attributes.src.nodeValue}`;
-    document.querySelector(".inner-cards").classList.toggle("hidden");
+    mainImage.classList.remove("hidden");
     document.querySelector("#heading-text").classList.add("hidden");
   });
 });

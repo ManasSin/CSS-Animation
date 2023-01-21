@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random colorful dots</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        /* box-sizing: border-box; */
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        /* background-color: #4d424d; */
+      }
+
+      .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      .all {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #4d4d4d;
+
+        /* border: 1px solid red; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="all"></div>
+  </body>
+  <script>
+    const randomColor = [
+      "#00FFFF",
+      "#1ce5ab",
+      "#3ad57b",
+      "#de656f",
+      "#4a31ad",
+      "#c4f08f",
+      "#db86eb",
+      "#46d2ef",
+      "#f4e807",
+      "#1c32b0",
+      "#9f3642",
+      "#73a0aa",
+      "#11d1bf",
+      "#9cb805",
+      "#8e5069",
+      "#5F9EA0",
+      "#FFF0F5",
+      "#ADD8E6",
+    ];
+
+    // madking circle invisible at click
+    document.querySelector(".all").addEventListener("click", function () {
+      let circle = document.createElement("div");
+      circle.classList.add("circle");
+      circle.style.top = `${event.clientY - 7}px `;
+      circle.style.left = `${event.clientX - 7}px`;
+      circle.style.backgroundColor = `${
+        randomColor[Math.floor(Math.random() * 16)]
+      }`;
+      document.querySelector(".all").append(circle);
+
+      // making it disapre in 3sec
+      setTimeout(() => {
+        circle.remove();
+      }, 1000);
+    });
+  </script>
+</html>

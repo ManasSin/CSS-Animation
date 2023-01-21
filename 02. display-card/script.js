@@ -48,8 +48,8 @@ console.log(cards);
 
 cards.forEach((element) => {
   element.addEventListener("click", function () {
-    mainImage.attributes.src.nodeValue = `${element.attributes.src.nodeValue}`;
-    mainImage.classList.remove("hidden");
-    document.querySelector("#heading-text").classList.add("hidden");
+    mainImage.attributes.src.nodeValue = `${element.attributes.src.nodeValue}`; // image src transfer
+    mainImage.classList.remove("hidden"); // hidden removed 
+    document.querySelector("#heading-text").classList.add("hidden"); // removing text from 
   });
 });

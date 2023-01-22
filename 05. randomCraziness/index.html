@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crazy ui</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- ! upper section contains nav Title search -->
+      <section>
+        <!-- ? navbar section -->
+        <nav>
+          <div class="home-logo-link"></div>
+          <p><span>Home</span></p>
+          <div>
+            <div class="bell-icon">
+              <i class="fa fa-bell"></i>
+            </div>
+            <div class="user-icon"></div>
+          </div>
+        </nav>
+
+        <!-- ? aritcle section -->
+        <article>
+          <h3 class="black-dark big-text">Listening Everyday</h3>
+          <p class="light-black small-text">
+            Explore millons of music according to your taste
+          </p>
+        </article>
+
+        <!-- ? sreach section -->
+        <section role="searchbox">
+          <i class="fa fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search Music" />
+        </section>
+      </section>
+
+      <!-- ! main section contianer page title and handing cards -->
+      <main>
+        <!-- * list of pages -->
+        <ul>
+          <li class="page-list-items selected">Overview</li>
+          <li class="page-list-items">Songs</li>
+          <li class="page-list-items">Albums</li>
+          <li class="page-list-items">Artists</li>
+        </ul>
+
+        <!-- * hanging card section -->
+        <div class="hanging-cards z-mid">
+          <div class="clip-hanger"></div>
+          <div class="card-image">
+            <img src="" alt="" />
+          </div>
+          <div class="card-bottom">
+            <div class="card-text">
+              <p class="light-black small-text">20 songs</p>
+              <p class="black-dark mid-text">Alan Walker</p>
+            </div>
+            <div class="play-icon">
+              <i class="fa fa-circle-play"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- todo :- one more card here  -->
+        <!--  -->
+      </main>
+
+      <!-- ! hanging banner contains itself -->
+      <div class="hanging-banner">
+        <div><img src="" alt="" /></div>
+        <div class="card-text">
+          <p class="black-dark mid-text">Marshmello</p>
+          <p class="light-black small-text">Hate the Other Side</p>
+        </div>
+        <div class="time-stamp">
+          <p class="time">3.40</p>
+        </div>
+      </div>
+
+      <!-- ! bottom bar contianes itself -->
+      <aside>
+        <ul>
+          <li class="bottom-nav-link nav-selected">
+            <i class="fa fa-house-blank"></i>
+          </li>
+          <li class="bottom-nav-link">
+            <i class="fa fa-heart-blank"></i>
+          </li>
+          <li class="bottom-nav-link">
+            <i class="fa fa-light fa-fire"></i>
+          </li>
+          <li class="bottom-nav-link">
+            <i class="fa fa-light fa-gear"></i>
+          </li>
+        </ul>
+      </aside>
+    </main>
+  </body>
+</html>

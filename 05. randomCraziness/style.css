@@ -1,1 +1,480 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap");
+
+:root {
+  /* ? color variable */
+  --black-dark: rgb(28, 26, 26);
+  --black-light: rgb(74, 72, 72);
+
+  --shadow: rgba(82, 82, 82, 0.4);
+
+  --tint-white: #fffffa;
+
+  /* ? border variable */
+  --light-border: 1px solid var(--black-dark);
+
+  /* ? font */
+  --f-big: normal 700 24px "Inconsolata", helvetica;
+  --f-med: normal 500 19px "Inconsolata", helvetica;
+  --f-small: normal 500 14px "Inconsolata", helvetica;
+
+  /* ? space variable */
+  --spave-big: 3rem;
+  --spave-med: 2rem;
+  --spave-small: 1rem;
+  --spave-x-small: 0.5rem;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ! body section */
+
+body {
+  font-family: "Inconsolata", Arial, Helvetica, sans-serif;
+
+  z-index: 0;
+}
+
+/* * generic class */
+
+.black-dark {
+  color: var(--black-dark);
+}
+
+.light-black {
+  color: var(--black-light);
+}
+
+.mid-text {
+  font: var(--f-med);
+}
+
+.big-text {
+  font: var(--f-big);
+}
+
+.small-text {
+  font: var(--f-small);
+}
+
+/* * Main */
+
+body > main {
+  width: 100%;
+  height: 100%;
+
+  padding: var(--spave-small) 0;
+
+  display: grid;
+  grid-template-columns: 16px 1fr 16px;
+  grid-auto-rows: min-content;
+  row-gap: var(--spave-med);
+
+  background-color: var(--tint-white);
+
+  /* justify-items: stretch; */
+}
+
+main > * {
+  grid-column: 2;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spave-small);
+}
+
+main > section > nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-logo-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: var(--light-border);
+  background-color: skyblue;
+}
+
+nav .mid-text {
+  font-weight: 500;
+}
+
+.icons-group {
+  display: flex;
+  gap: var(--spave-small);
+  align-items: center;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  background-color: rgb(255, 192, 192);
+
+  filter: drop-shadow(1px 2px 5px var(--shadow));
+}
+
+main > section > article > * {
+  padding: 4px 0;
+}
+
+section > article .small-text {
+  letter-spacing: -0.033em;
+}
+
+/* Search */
+
+section[role="searchbox"] {
+  border: var(--light-border);
+  border-radius: 10px;
+
+  /* padding: var(--spave-x-small) var(--spave-small); */
+
+  position: relative;
+
+  background-color: var(--tint-white);
+}
+
+section[role="searchbox"] > i {
+  padding: var(--spave-small) var(--spave-small);
+
+  border-right: var(--light-border);
+  border-radius: 10px 0 0 10px;
+
+  background-color: rgb(240, 240, 240);
+
+  z-index: 1;
+}
+
+input {
+  list-style-type: none;
+  border: none;
+  outline: none;
+
+  background-color: var(--tint-white);
+  z-index: 1;
+}
+
+section[role="searchbox"]::after {
+  content: "";
+  display: block;
+  width: 95%;
+  height: 0.9rem;
+  position: absolute;
+  background-color: rgb(253, 249, 212);
+  z-index: -1;
+  bottom: -7px;
+  left: 3%;
+  border: var(--light-border);
+  border-radius: 10px;
+}
+
+/* * page list */
+
+.page-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--spave-big);
+}
+
+.page-list {
+  grid-column: 1/ -1;
+  font: var(--f-med);
+  font-weight: 700;
+  letter-spacing: -0.033em;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+
+  border-bottom: 1.5px solid #000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding-bottom: var(--spave-small);
+
+  z-index: 1;
+
+  /* filter: drop-shadow(1px 1px 5px var(--shadow)); */
+}
+.selected {
+  background-color: rgb(232, 179, 99);
+  height: 10px;
+  width: 5rem;
+  position: absolute;
+  margin-top: 10px;
+  /* z-index: -1; */
+}
+
+/* * hanging cards */
+
+.hanging-cards {
+  width: max-content;
+  padding: var(--spave-x-small);
+  border: var(--light-border);
+  border-radius: 15px;
+
+  display: flex;
+  flex-flow: column;
+  gap: var(--spave-x-small);
+
+  background-color: rgb(255, 254, 245);
+
+  position: relative;
+}
+
+.hanging-cards::after {
+  content: "";
+  display: none;
+  width: 95%;
+  height: 0.9rem;
+  position: absolute;
+  background-color: rgb(253, 249, 212);
+  bottom: -4px;
+  left: 3%;
+  border: var(--light-border);
+  border-radius: 10px;
+}
+
+.hanging-cards > .card-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: rgb(176, 248, 236);
+  border-radius: 10px;
+}
+
+.card-bottom {
+  display: flex;
+  gap: var(--spave-x-small);
+}
+
+.card-text > .small-text {
+  font-size: 14px;
+  font-weight: 400;
+
+  margin-bottom: var(--spave-x-small);
+}
+.card-text > .mid-text {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hanging-cards:nth-child(odd) {
+  margin-left: var(--spave-x-small);
+  grid-column: 1/2;
+  transform: skew(5deg, -3deg);
+}
+
+.hanging-cards:nth-child(odd) > .clip-hanger {
+  position: absolute;
+  display: flex;
+  top: -13%;
+  left: 40%;
+}
+
+.hanging-cards:nth-child(even) {
+  /* margin-right: var(--spave-x-small); */
+  grid: 2/3;
+  transform: skew(-5deg, 2deg);
+}
+
+.hanging-cards:nth-child(even) > .card-image {
+  background-color: rgb(253, 219, 184);
+}
+
+.hanging-cards:nth-child(even) > .clip-hanger {
+  position: absolute;
+  display: flex;
+  top: -13%;
+  left: 15%;
+}
+
+/* ? clip hanger */
+
+.clip-hanger {
+  width: fit-content;
+  height: max-content;
+
+  position: absolute;
+
+  display: none;
+  flex-flow: column;
+  align-items: center;
+
+  /* transform: skew(3deg, -1deg); */
+}
+
+.clip-hanger > .hole {
+  width: 10px;
+  height: 10px;
+  border: outside 4px solid rgba(255, 255, 255, 0.405);
+  background-color: var(--black-dark);
+  border-radius: 50%;
+}
+
+.clip-hanger > .pole {
+  width: 6px;
+  height: 40px;
+  border: var(--light-border);
+  border-width: 1.5px;
+
+  margin-top: -7px;
+  margin-bottom: -7px;
+  background-color: #fff;
+}
+
+.clip-hanger > .pole:nth-child(2) {
+  margin-top: -7px;
+}
+
+/* ! hanging banner */
+
+.hanging-banner {
+  width: 95%;
+  padding: var(--spave-small) var(--spave-x-small);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--spave-small);
+
+  border: var(--light-border);
+  border-bottom: 10px solid rgb(51, 163, 20);
+  border-radius: 15px;
+
+  transform: skew(-3deg, 3deg);
+}
+
+.hanging-banner > div:first-child {
+  width: 45px;
+  aspect-ratio: 1;
+  background-color: rgb(34, 44, 119);
+  border-radius: 10px;
+}
+
+.hanging-banner > .card-text {
+  flex: 1 1 auto;
+  margin-bottom: -5px;
+}
+
+.card-text > * {
+  margin-top: 5px;
+}
+
+.hanging-banner > .clip-hanger {
+  position: absolute;
+  display: flex;
+  top: -30%;
+  rotate: -50deg;
+  left: -1%;
+}
+
+.hanging-banner > .clip-hanger:last-child {
+  position: absolute;
+  display: flex;
+  rotate: -50deg;
+  top: 70%;
+  left: 100%;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spave-x-small) var(--spave-small);
+
+  background-color: rgb(142, 228, 235);
+
+  border: var(--light-border);
+  border-radius: 15px;
+}
+
+.bottom-bar > li {
+  padding: 4px var(--spave-small);
+}
+
+.nav-selected {
+  border: var(--light-border);
+  background-color: rgb(255, 216, 144);
+  border-radius: 10px;
+}

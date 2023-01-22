@@ -22,11 +22,9 @@
         <!-- ? navbar section -->
         <nav>
           <div class="home-logo-link"></div>
-          <p><span>Home</span></p>
-          <div>
-            <div class="bell-icon">
-              <i class="fa fa-bell"></i>
-            </div>
+          <p class="black-dark mid-text"><span>Home</span></p>
+          <div class="icons-group">
+            <i class="fa fa-bell"></i>
             <div class="user-icon"></div>
           </div>
         </nav>
@@ -47,10 +45,11 @@
       </section>
 
       <!-- ! main section contianer page title and handing cards -->
-      <main>
+      <main class="page-section">
         <!-- * list of pages -->
-        <ul>
-          <li class="page-list-items selected">Overview</li>
+        <div class="selected"></div>
+        <ul class="page-list">
+          <li class="page-list-items">Overview</li>
           <li class="page-list-items">Songs</li>
           <li class="page-list-items">Albums</li>
           <li class="page-list-items">Artists</li>
@@ -58,7 +57,11 @@
 
         <!-- * hanging card section -->
         <div class="hanging-cards z-mid">
-          <div class="clip-hanger"></div>
+          <div class="clip-hanger">
+            <div class="hole"></div>
+            <div class="pole"></div>
+            <div class="hole"></div>
+          </div>
           <div class="card-image">
             <img src="" alt="" />
           </div>
@@ -74,7 +77,25 @@
         </div>
 
         <!-- todo :- one more card here  -->
-        <!--  -->
+        <div class="hanging-cards z-mid">
+          <div class="clip-hanger">
+            <div class="hole"></div>
+            <div class="pole"></div>
+            <div class="hole"></div>
+          </div>
+          <div class="card-image">
+            <img src="" alt="" />
+          </div>
+          <div class="card-bottom">
+            <div class="card-text">
+              <p class="light-black small-text">20 songs</p>
+              <p class="black-dark mid-text">Tim Bergling</p>
+            </div>
+            <div class="play-icon">
+              <i class="fa fa-circle-play"></i>
+            </div>
+          </div>
+        </div>
       </main>
 
       <!-- ! hanging banner contains itself -->
@@ -87,25 +108,33 @@
         <div class="time-stamp">
           <p class="time">3.40</p>
         </div>
+        <div class="clip-hanger">
+          <div class="hole"></div>
+          <div class="pole"></div>
+          <div class="hole"></div>
+        </div>
+        <div class="clip-hanger">
+          <div class="hole"></div>
+          <div class="pole"></div>
+          <div class="hole"></div>
+        </div>
       </div>
 
       <!-- ! bottom bar contianes itself -->
-      <aside>
-        <ul>
-          <li class="bottom-nav-link nav-selected">
-            <i class="fa fa-house-blank"></i>
-          </li>
-          <li class="bottom-nav-link">
-            <i class="fa fa-heart-blank"></i>
-          </li>
-          <li class="bottom-nav-link">
-            <i class="fa fa-light fa-fire"></i>
-          </li>
-          <li class="bottom-nav-link">
-            <i class="fa fa-light fa-gear"></i>
-          </li>
-        </ul>
-      </aside>
+      <ul class="bottom-bar">
+        <li class="bottom-nav-link nav-selected">
+          <i class="fa fa-house"></i>
+        </li>
+        <li class="bottom-nav-link">
+          <i class="fa fa-heart"></i>
+        </li>
+        <li class="bottom-nav-link">
+          <i class="fa fa-light fa-fire"></i>
+        </li>
+        <li class="bottom-nav-link">
+          <i class="fa fa-light fa-gear"></i>
+        </li>
+      </ul>
     </main>
   </body>
 </html>

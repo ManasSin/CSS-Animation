@@ -126,10 +126,15 @@ body {
 /* * Main */
 
 body > main {
-  width: 100%;
-  height: 100%;
+  margin: auto;
+  width: 364px;
+  height: 744px;
+
+  border: 0.2px solid var(--shadow);
+  border-radius: 15px;
 
   padding: var(--spave-small) 0;
+  margin-top: var(--spave-x-small);
 
   display: grid;
   grid-template-columns: 16px 1fr 16px;
@@ -245,7 +250,7 @@ section[role="searchbox"]::after {
 
 .page-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: var(--spave-big);
 }
 
@@ -353,8 +358,8 @@ li {
 }
 
 .hanging-cards:nth-child(even) {
-  /* margin-right: var(--spave-x-small); */
-  grid: 2/3;
+  margin-right: var(--spave-x-small);
+  grid-column: 3/-1;
   transform: skew(-5deg, 2deg);
 }
 

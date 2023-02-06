@@ -39,6 +39,12 @@ body {
   font-family: "Rajdani", Verdana, sans-serif;
   font-size: medium;
 }
+nav {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
 
 ul {
   display: flex;

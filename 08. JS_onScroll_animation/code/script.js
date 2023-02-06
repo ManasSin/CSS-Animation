@@ -8,8 +8,8 @@ const scrollAnimation = () => {
       items.getBoundingClientRect().top < window.innerHeight;
 
     isEelementOnScreen
-      ? items.classlist.add("revealed")
-      : items.classlist.remove("revealed");
+      ? items.classList.add("revealed")
+      : items.classList.remove("revealed");
   }
 };
 

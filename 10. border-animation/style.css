@@ -1,0 +1,65 @@
+/* the props */
+@import "https://unpkg.com/open-props";
+
+/* optional imports that use the props */
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+:root {
+  --height: 65vh;
+  --width: calc(var(--height) / 1.5);
+}
+
+body {
+  /* background: var(--purple-9); */
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  block-size: var(--height);
+  inline-size: var(--width);
+  background-color: var(--pink-12);
+  border-radius: var(--radius-2);
+  position: relative;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  block-size: calc(var(--height) + 1rem);
+  inline-size: calc(var(--width) + 1rem);
+  border-radius: inherit;
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--lime-6),
+    var(--blue-6),
+    var(--purple-8),
+    var(--red-8),
+    var(--orange-8),
+    var(--yellow-6)
+  );
+  /* background: var(--gradient-18); */
+  animation: spin 2s linear infinite;
+}
+
+.card::after {
+  filter: blur(4rem);
+}
+
+@keyframes spin {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}

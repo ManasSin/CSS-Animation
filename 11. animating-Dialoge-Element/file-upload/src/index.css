@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+  isolation: isolate;
+  position: relative;
+}

@@ -12,29 +12,28 @@ function App() {
     observer.observe(myRef.current);
   }, []);
   return (
-    <main className="w-full h-[100vh] flex flex-col flex-wrap items-stretch justify-end col sm:items-center sm:justify-center pb-32 sm:w-fit sm:mx-auto gap-3">
-      <File />
-      <File />
-      <File />
-      <File />
+    <main className="w-full h-[100vh] overflow-hidden">
+      <section className="h-full flex flex-col flex-wrap items-stretch justify-end col sm:items-center sm:justify-center pb-32 sm:w-fit sm:mx-auto gap-3">
+        <File />
+        <File />
+        <File />
+        <File />
 
-      <AddFileBtn setDialogeOpen={setDialogeOpen} />
-      <div
-        role="dialoge"
+        <AddFileBtn setDialogeOpen={setDialogeOpen} />
+      </section>
+      <dialog
+        role="mega-dialogue"
+        // open={isOpen}
+        open={dialogeOpen ? "open" : "inset"}
         ref={myRef}
         className={`
-          w-fit 
-          h-fit 
-          translate-x-0 
-          absolute 
-          top-2 
+        ${
+          dialogeOpen
+            ? "w-fit h-fit absolute inset-1"
+            : "w-0 h-0 translate-x-full"
+        }
         `}
       >
-        {/* ${
-          dialogeOpen
-            ? "w-[100%] h-[100%] translate-x-0"
-            : "w-0 h-0 translate-x-full"
-        } */}
         <form
           action=""
           className="
@@ -66,7 +65,7 @@ function App() {
             <button>submit</button>
           </footer>
         </form>
-      </div>
+      </dialog>
     </main>
   );
 }

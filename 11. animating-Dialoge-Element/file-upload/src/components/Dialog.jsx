@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { StateProvider } from "../context/States";
 
 const Dialog = () => {
+  const dialoge = useContext(StateProvider);
+  if (!dialoge) {
+    return;
+  }
   return (
     <dialog
       role="mega-dialogue"
-      open={dialogeOpen}
-      ref={myRef}
-      className={`
-        ${
-          dialogeOpen
-            ? "w-full h-full filter backdrop-blur-md flex flex-col justify-end items-center  bg-transparent absolute inset-0 animate-slidein"
-            : "w-0 h-0 translate-x-full animate-dismiss"
-        }
-        isolate
-        `}
+      // className={`
+      //   ${
+      //     dialogeOpen
+      //       ? "w-full h-full filter backdrop-blur-md flex flex-col justify-end items-center  bg-transparent absolute inset-0 animate-slidein"
+      //       : "w-0 h-0 translate-x-full animate-dismiss"
+      //   }
+      //   isolate
+      //   `}
     >
       <form
-        action=""
         className="
             w-fit
             h-fit
@@ -28,22 +30,11 @@ const Dialog = () => {
             divide-gray-200
             rounded-2xl
             overflow-hidden
-
           "
       >
         <header
           className="
-          col-span-full
-          p-2
-          text-sm
-          font-medium
-          grid
-          grid-cols-[auto_1fr_auto]
-          px-4
-          py-2
-          items-center
-          row-span-1
-          bg-slate-600
+          col-span-full p-2 text-sm font-medium grid grid-cols-[auto_1fr_auto] px-4 py-2 items-center row-span-1 bg-slate-600
         "
         >
           <div className=" grid place-content-center">

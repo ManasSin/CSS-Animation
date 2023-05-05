@@ -20,9 +20,9 @@ export function StateProvider({ children }) {
     }
   );
 
-  const setState = useCallback((state) => {
+  const setState = useCallback((dialog) => {
     return dispatch({
-      type: `set-${state}`,
+      type: `set-dialog`,
     });
   }, []);
 

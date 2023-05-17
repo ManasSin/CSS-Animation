@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
-import { StateProvider } from "../context/States";
+import { ContextState } from "../context/States";
 
 const Dialog = () => {
-  const dialoge = useContext(StateProvider);
-  if (!dialoge) {
-    return;
-  }
+  const { dialog } = useContext(ContextState);
+  if (!dialog) return;
   return (
     <dialog
       role="mega-dialogue"

@@ -6,7 +6,8 @@ export function StateProvider({ children }) {
   const [{ dialog, modal }, dispatch] = useReducer(
     (state, action) => {
       switch (action.key) {
-        case "set-dailog":
+        case "set-dialog":
+          console.log("hey,", state.dialog);
           return { ...state, dialog: !state.dialog };
         case "set-modal":
           return { ...state, modal: !state.modal };
@@ -20,9 +21,11 @@ export function StateProvider({ children }) {
     }
   );
 
-  const setState = useCallback((dialog) => {
+  const setState = useCallback((state) => {
+    console.log(state);
     return dispatch({
-      type: `set-dialog`,
+      type: `set-${state}`,
+      payload: null,
     });
   }, []);
 

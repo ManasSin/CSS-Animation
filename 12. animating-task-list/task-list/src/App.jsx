@@ -1,7 +1,8 @@
 import Email from "./ui/Email";
+import Header from "./ui/Header";
 
 function App() {
-  return <Email />;
+  return <Header />;
 }
 
 export default App;

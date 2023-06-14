@@ -5,7 +5,7 @@ function MultiStep() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="min-h-screen flex items-start bg-gradient-to-br from-slate-400 to-slate-900 pt-40">
+    <div className="min-h-screen flex w-full items-start bg-gradient-to-br from-slate-400 to-slate-900 pt-40">
       <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
         <div className="flex justify-between rounded p-8 ">
           <Step step={1} currentStep={currentStep} />

@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import useKeypress from "react-use-keypress";
 
 let images = [
   "/src/images/1.jpg",
@@ -9,14 +10,39 @@ let images = [
   "/src/images/4.jpg",
   "/src/images/5.jpg",
   "/src/images/6.jpg",
+  "/src/images/1.jpg",
+  "/src/images/2.jpg",
+  "/src/images/3.jpg",
+  "/src/images/4.jpg",
+  "/src/images/5.jpg",
+  "/src/images/6.jpg",
+  "/src/images/1.jpg",
+  "/src/images/2.jpg",
+  "/src/images/3.jpg",
+  "/src/images/4.jpg",
+  "/src/images/5.jpg",
+  "/src/images/6.jpg",
 ];
+
+let collapsedAspectRatio = 1 / 3;
+let fullAspectRation = 3 / 2;
+let gap = 2;
+let margin = 12;
 
 function Carousal() {
   let [index, setIndex] = useState(0);
 
+  useKeypress("ArrowLeft", () => {
+    if (index + 1 < images.length) setIndex(index + 1);
+  });
+
+  useKeypress("ArrowRight", () => {
+    if (index > 0) setIndex((i) => i - 1);
+  });
+
   return (
     <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
-      <div className="h-screen max-w-md m-auto bg-white">
+      <div className="h-screen m-auto bg-white">
         <div className="mx-auto flex h-full max-w-7xl flex-col justify-center">
           <div className="relative overflow-hidden">
             <motion.div animate={{ x: `-${index * 100}%` }} className="flex">
@@ -57,6 +83,47 @@ function Carousal() {
                 </motion.button>
               )}
             </AnimatePresence>
+          </div>
+
+          <div className="absolute inset-x-0 bottom-6 flex justify-center overflow-hidden">
+            <motion.div
+              initial={false}
+              animate={{
+                x: `-${
+                  index * 100 * (collapsedAspectRatio / fullAspectRation) +
+                  index * gap +
+                  margin
+                }%`,
+              }}
+              style={{ aspectRatio: fullAspectRation, gap: `${gap}%` }}
+              className="flex h-14"
+            >
+              {images.map((image, i) => (
+                <motion.button
+                  key={image}
+                  onClick={() => setIndex(i)}
+                  whileHover={{ opacity: 1 }}
+                  initial={false}
+                  animate={i === index ? "active" : "inactive"}
+                  variants={{
+                    active: {
+                      marginLeft: `${margin}%`,
+                      marginRight: `${margin}%`,
+                      opacity: 1,
+                      aspectRatio: fullAspectRation,
+                    },
+                    inactive: {
+                      marginLeft: `${0}%`,
+                      marginRight: `${0}%`,
+                      opacity: 0.5,
+                      aspectRatio: collapsedAspectRatio,
+                    },
+                  }}
+                >
+                  <motion.img src={image} className="h-full object-cover" />
+                </motion.button>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
